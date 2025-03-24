@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Publications
 layout: default
 ---
@@ -10,4 +10,4 @@ layout: default
 (with Alex Camuto, Matthew Willetts, and Tom Rainforth)  
 _International Conference on Artificial Intelligence and Statistics (AISTATS), 2022_  
 
-![](images/Lipschitz_VAEs_Thumbnail.png)
+![](images/Lipschitz_VAEs_Thumbnail.png) -->

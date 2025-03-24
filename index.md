@@ -15,6 +15,6 @@ I'm a first-year PhD student in Economics at the Stanford GSB.
 
 My interests lie in industrial organization and public & environmental economics.
 
-I'm motivated by bringing the tools and insights of economics to bear on real-world policy innovations.
+I'm motivated by bringing the tools and insights of economics to bear on real-world policy questions.
 
 My CV is [here](cv.pdf).

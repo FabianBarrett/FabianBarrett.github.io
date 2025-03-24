@@ -11,10 +11,10 @@ layout: home
 
 Hi! :wave: I'm Ben.
 
-I'm an incoming PhD student in Economics at Stanford GSB, starting in September 2024. 
+I'm a first-year PhD student in Economics at the Stanford GSB. 
 
-I'm broadly interested in industrial organization, urban and environmental economics, and econometrics.
+My interests lie in industrial organization and public & environmental economics.
 
-Previously, I was a predoctoral fellow in economics at [SIEPR](https://siepr.stanford.edu/), and a data scientist at [QuantCo](https://quantco.com/). 
+I'm motivated by bringing the tools and insights of economics to bear on real-world policy innovations.
 
-I hold a master's degree in statistics from Oxford, and a bachelor's degree in applied mathematics from Harvard.
+My CV is [here](cv.pdf).

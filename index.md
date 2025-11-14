@@ -13,7 +13,7 @@ Hi! :wave: I'm Ben.
 
 I'm a second-year PhD student in Economics at the Stanford GSB. 
 
-My interests lie in industrial organization and in its application to related fields.
+My interests lie in industrial organization and its application to related fields.
 
 I'm motivated by bringing the insights of economics to bear on real-world policy questions.
 

@@ -4,11 +4,6 @@
 
 layout: home
 ---
-<head>
-    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
-</head>
-<!-- ## About -->
-
 Hi! :wave: I'm Ben.
 
 I'm a second-year PhD student in Economics at the Stanford GSB. 
@@ -16,5 +11,3 @@ I'm a second-year PhD student in Economics at the Stanford GSB.
 My interests lie in industrial organization and its application to related fields.
 
 I'm motivated by bringing the insights of economics to bear on real-world policy questions.
-
-My CV is [here](cv.pdf).

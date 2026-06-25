@@ -3,58 +3,43 @@ layout: default
 ---
 
 <div class="home">
-    <!-- {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-    {%- endif -%} -->
 
-    <table
-        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <table class="profile-table">
         <tbody>
-            <tr style="padding:0px">
-                <td style="padding:2.5%;width:70%;vertical-align:middle">
+            <tr>
+                <td class="text-col">
+                    <span class="name">{{ site.title | escape }}</span>
                     {{ content }}
+                    <p class="contact-links">
+                        <a href="{{ "/cv.pdf" | relative_url }}">CV</a>
+                        <!-- Add when ready:
+                        &nbsp;&middot;&nbsp;
+                        <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+                        -->
+                    </p>
                 </td>
-                <td style="padding:2.5%;width:30%;max-width: 30%">
-                    <img style="width:100%;max-width:100%" alt="Me" src="images/Profile_Picture_Circular.png"
-                        class="hoverZoomLink">
-                </td>
-            </tr>
-            <!-- To switch off color-alternation, add redundant row -->
-            <tr></tr>
-            <tr style="padding:0px">
-                <td style="padding:2.5%;width:63%;vertical-align:middle">
-                    {%- if site.posts.size > 0 -%}
-                    <h2 class="post-list-heading">{{ page.list_title | default: "News" }}</h2>
-                    <ul class="post-list">
-                        {%- for post in site.posts -%}
-                        <!-- <li style="margin:0px"> -->
-                        <li>
-                            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                            <span class="post-meta">{{ post.date | date: date_format }}</span>
-                            <h4>
-                                <a class="post-link" href="{{ post.url | relative_url }}">
-                                    {{ post.title | escape }}
-                                </a>
-                            </h4>
-                            {%- if site.show_excerpts -%}
-                            {{ post.excerpt }}
-                            {%- endif -%}
-                        </li>
-                        {%- endfor -%}
-                    </ul>
-                    {%- endif -%}
-                </td>
-                <td style="padding:2.5%;width:40%;max-width:40%">
+                <td class="photo-col">
+                    <img src="{{ "/images/Profile_Picture_Circular.png" | relative_url }}"
+                        alt="{{ site.title | escape }}" class="hoverZoomLink">
                 </td>
             </tr>
         </tbody>
     </table>
-    <table style="width:100%; border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-            <tr style="padding:0px">
-                <td style="padding:0%; text-align:center">
-                    <img src="http://ghchart.rshah.org/FabianBarrett" alt="Ben's GitHub activity." />
-                </td>
-            </tr>
-    </table>
+
+    {%- if site.posts.size > 0 -%}
+    <h2 class="heading news-heading">{{ page.list_title | default: "News" }}</h2>
+    {%- for post in site.posts -%}
+    <p class="news-item">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span><br>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        {%- if site.show_excerpts -%}{{ post.excerpt }}{%- endif -%}
+    </p>
+    {%- endfor -%}
+    {%- endif -%}
+
+    <div class="github-activity">
+        <img src="https://ghchart.rshah.org/FabianBarrett" alt="Ben's GitHub activity." />
+    </div>
+
 </div>

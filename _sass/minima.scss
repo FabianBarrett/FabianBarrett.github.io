@@ -13,7 +13,7 @@ $spacing-unit:     30px !default;
 $text-color:       #000 !default;
 $background-color: #fdfdfd !default;
 // Accent color used for link underlines
-$accent-color:     #d97706 !default;
+$accent-color:     #166534 !default; // dark-ish green
 $brand-color:      $accent-color !default;
 
 $grey-color:       #828282 !default;
@@ -119,7 +119,7 @@ p { margin-bottom: 20px; }
   font-size: 30px;
   line-height: 30px;
   font-weight: $base-font-weight; // not bold
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .contact-links { margin-bottom: 0; }

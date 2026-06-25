@@ -13,7 +13,7 @@ $spacing-unit:     30px !default;
 $text-color:       #000 !default;
 $background-color: #fdfdfd !default;
 // Accent color used for link underlines
-$accent-color:     #d97706 !default;
+$accent-color:     #14532d !default; // dark green
 $brand-color:      $accent-color !default;
 
 $grey-color:       #828282 !default;
@@ -22,8 +22,8 @@ $grey-color-dark:  darken($grey-color, 25%) !default;
 
 $table-text-align: left !default;
 
-// Width of the content area
-$content-width:    800px !default;
+// Width of the content area (widened from 800px for the three-column layout)
+$content-width:    1000px !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
@@ -81,7 +81,8 @@ body {
 // Paragraph spacing: 20px bottom margin (vs minima's 15px).
 p { margin-bottom: 20px; }
 
-// Profile section: name + bio + contact links on the left, photo on the right.
+// Profile section: name (left) · contact (middle) · photo (right),
+// with the bio spanning the middle + right columns underneath.
 .profile-table {
   width: 100%;
   margin-bottom: $spacing-unit;
@@ -94,24 +95,24 @@ p { margin-bottom: 20px; }
     border: 0;
     text-align: left;
     vertical-align: top;
-    padding: 0;
+    padding: 0 4px 20px;
     color: $text-color;
   }
 }
 
-.text-col {
-  width: 68%;
-  padding-right: 5% !important;
+.name-cell,
+.bio-cell,
+.photo-cell {
+  padding-top: 40px;
 }
 
-.photo-col {
-  width: 30%;
-  max-width: 30%;
+.name-cell { width: 22%; }
+.bio-cell  { width: 53%; padding-right: 30px; }
+.photo-cell { width: 25%; }
 
-  img {
-    width: 100%;
-    margin-bottom: 0;
-  }
+.photo-cell img {
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .name {
@@ -119,17 +120,12 @@ p { margin-bottom: 20px; }
   font-size: 30px;
   line-height: 30px;
   font-weight: $base-font-weight; // not bold
-  margin-bottom: 20px;
 }
 
 .contact-links { margin-bottom: 0; }
 
-// Section labels (News, etc.).
+// Section labels (News, etc.) in the left column.
 .heading { font-weight: 590; }
-.news-heading {
-  @include relative-font-size(1.3);
-  margin-top: $spacing-unit;
-}
 .news-item .post-meta { color: $grey-color; }
 
 // GitHub activity chart: centered, constrained to the content column.
@@ -143,18 +139,18 @@ p { margin-bottom: 20px; }
   }
 }
 
-// Stack the two columns on narrow screens.
+// Stack the three columns on narrow screens.
 @include media-query($on-palm) {
-  .text-col,
-  .photo-col {
+  .name-cell,
+  .contact-cell,
+  .photo-cell,
+  .bio-cell,
+  .section-cell {
     display: block;
     width: 100%;
-    max-width: 100%;
-    padding-right: 0 !important;
+    padding-top: $spacing-unit / 2;
   }
 
-  .photo-col img {
-    max-width: 220px;
-    margin-top: $spacing-unit / 2;
-  }
+  .name-cell { padding-top: $spacing-unit; }
+  .photo-cell img { max-width: 220px; }
 }

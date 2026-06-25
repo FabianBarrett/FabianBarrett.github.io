@@ -6,14 +6,9 @@ layout: default
 
     <table class="profile-table">
         <tbody>
-            <!-- Left: name with photo beneath it. Right: intro + CV. -->
             <tr>
-                <td class="left-col">
+                <td class="text-col">
                     <span class="name">{{ site.title | escape }}</span>
-                    <img src="{{ "/images/cadiz_dec_2025.jpeg" | relative_url }}"
-                        alt="{{ site.title | escape }}" class="profile-photo hoverZoomLink">
-                </td>
-                <td class="bio-cell">
                     {{ content }}
                     <p class="contact-links">
                         <a href="{{ "/cv.pdf" | relative_url }}">CV</a>
@@ -23,28 +18,25 @@ layout: default
                         -->
                     </p>
                 </td>
-            </tr>
-
-            {%- if site.posts.size > 0 -%}
-            <!-- News: heading in the left column, entries on the right -->
-            <tr>
-                <td class="section-cell">
-                    <span class="heading">{{ page.list_title | default: "News" }}</span>
-                </td>
-                <td>
-                    {%- for post in site.posts -%}
-                    <p class="news-item">
-                        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                        <span class="post-meta">{{ post.date | date: date_format }}</span><br>
-                        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-                        {%- if site.show_excerpts -%}{{ post.excerpt }}{%- endif -%}
-                    </p>
-                    {%- endfor -%}
+                <td class="photo-col">
+                    <img src="{{ "/images/Profile_Picture_Circular.png" | relative_url }}"
+                        alt="{{ site.title | escape }}" class="hoverZoomLink">
                 </td>
             </tr>
-            {%- endif -%}
         </tbody>
     </table>
+
+    {%- if site.posts.size > 0 -%}
+    <h2 class="heading news-heading">{{ page.list_title | default: "News" }}</h2>
+    {%- for post in site.posts -%}
+    <p class="news-item">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span><br>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        {%- if site.show_excerpts -%}{{ post.excerpt }}{%- endif -%}
+    </p>
+    {%- endfor -%}
+    {%- endif -%}
 
     <div class="github-activity">
         <img src="https://ghchart.rshah.org/FabianBarrett" alt="Ben's GitHub activity." />

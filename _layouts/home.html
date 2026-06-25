@@ -6,10 +6,12 @@ layout: default
 
     <table class="profile-table">
         <tbody>
-            <!-- Top row: name (left) · intro + CV (middle) · photo (right) -->
+            <!-- Left: name with photo beneath it. Right: intro + CV. -->
             <tr>
-                <td class="name-cell">
+                <td class="left-col">
                     <span class="name">{{ site.title | escape }}</span>
+                    <img src="{{ "/images/cadiz_dec_2025.jpeg" | relative_url }}"
+                        alt="{{ site.title | escape }}" class="profile-photo hoverZoomLink">
                 </td>
                 <td class="bio-cell">
                     {{ content }}
@@ -21,10 +23,6 @@ layout: default
                         -->
                     </p>
                 </td>
-                <td class="photo-cell">
-                    <img src="{{ "/images/cadiz_dec_2025.jpeg" | relative_url }}"
-                        alt="{{ site.title | escape }}" class="hoverZoomLink">
-                </td>
             </tr>
 
             {%- if site.posts.size > 0 -%}
@@ -33,7 +31,7 @@ layout: default
                 <td class="section-cell">
                     <span class="heading">{{ page.list_title | default: "News" }}</span>
                 </td>
-                <td colspan="2">
+                <td>
                     {%- for post in site.posts -%}
                     <p class="news-item">
                         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}

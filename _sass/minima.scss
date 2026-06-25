@@ -100,17 +100,19 @@ p { margin-bottom: 20px; }
   }
 }
 
-.name-cell,
-.bio-cell,
-.photo-cell {
+// Scoped under .profile-table so these beat the shared `.profile-table td`
+// padding shorthand (otherwise the column gap below has no effect).
+.profile-table .left-col,
+.profile-table .bio-cell {
   padding-top: 40px;
 }
 
-.name-cell { width: 22%; }
-.bio-cell  { width: 53%; padding-right: 30px; }
-.photo-cell { width: 25%; }
+.profile-table .left-col { width: 30%; padding-right: 100px; }
+.profile-table .bio-cell { width: 70%; }
 
-.photo-cell img {
+// Photo sits beneath the name in the left column.
+.profile-photo {
+  display: block;
   width: 100%;
   margin-bottom: 0;
 }
@@ -120,6 +122,7 @@ p { margin-bottom: 20px; }
   font-size: 30px;
   line-height: 30px;
   font-weight: $base-font-weight; // not bold
+  margin-bottom: 20px;
 }
 
 .contact-links { margin-bottom: 0; }
@@ -139,18 +142,17 @@ p { margin-bottom: 20px; }
   }
 }
 
-// Stack the three columns on narrow screens.
+// Stack the columns on narrow screens.
 @include media-query($on-palm) {
-  .name-cell,
-  .contact-cell,
-  .photo-cell,
+  .left-col,
   .bio-cell,
   .section-cell {
     display: block;
     width: 100%;
     padding-top: $spacing-unit / 2;
+    padding-right: 0;
   }
 
-  .name-cell { padding-top: $spacing-unit; }
-  .photo-cell img { max-width: 220px; }
+  .left-col { padding-top: $spacing-unit; }
+  .profile-photo { max-width: 220px; }
 }

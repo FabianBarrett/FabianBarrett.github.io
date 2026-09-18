@@ -6,7 +6,7 @@ layout: home
 ---
 Hi! :wave: I'm Ben.
 
-I'm a second-year PhD student in Economics at the Stanford GSB. 
+I'm a third-year PhD student in Economics at the Stanford GSB. 
 
 My interests lie in industrial organization and its application to related fields.
 
